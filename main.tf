@@ -3,14 +3,10 @@ data "aws_ami" "app_ami" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["amzn2-ami-hvm-*-x86_64-*"]
   }
 
   owners = ["137112412989"] # Amazon
-
-  lifecycle {
-    replace_triggered_by = [timestamp()]
-  }
 }
 
 resource "aws_instance" "web" {
