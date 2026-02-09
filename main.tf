@@ -7,6 +7,10 @@ data "aws_ami" "app_ami" {
   }
 
   owners = ["137112412989"] # Amazon
+
+  lifecycle {
+    replace_triggered_by = [timestamp()]
+  }
 }
 
 resource "aws_instance" "web" {
