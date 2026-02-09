@@ -1,6 +1,10 @@
 data "aws_ami" "app_ami" {
   most_recent = true
 
+provider "aws" {
+  region = "us-east-1"
+}
+
   filter {
     name   = "name"
     values = ["bitnami-tomcat-*-x86_64-hvm-ebs-nami"]
