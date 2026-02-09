@@ -1,9 +1,9 @@
-data "aws_ami" "app_ami" {
-  most_recent = true
-
 provider "aws" {
   region = "us-east-1"
 }
+
+data "aws_ami" "app_ami" {
+  most_recent = true
 
   filter {
     name   = "name"
